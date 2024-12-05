@@ -1,0 +1,117 @@
+:host ::ng-deep nb-stepper .step-content {
+  text-align: center;
+
+  button {
+    cursor: pointer;
+    margin: 0.5rem;
+  }
+}
+
+@import '../../../@theme/styles/themes';
+@include nb-install-component() {
+  .list-card {
+    nb-card-header {
+      border-bottom: none;
+    }
+
+  }
+
+  .show-grid {
+    .row {
+      margin: -0.5rem;
+    }
+
+    div[class^=col-] {
+      padding: 0.5rem;
+      box-sizing: border-box;
+
+      div {
+        text-align: center;
+        background-color: nb-theme(background-basic-color-2);
+        padding: 0.75rem 0.25rem;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+
+  .grid-h {
+    margin-top: 1.5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .table-responsive {
+    margin-top: 1rem;
+  }
+
+}
+nb-card-body {
+  overflow: visible;
+  padding-top: 25px;
+  padding: 25px;
+  //button {
+  //  width: 100%;
+  //  margin-bottom: 2rem;
+  //  display: block;
+  //
+  //  &:last-child {
+  //    margin-bottom: 0;
+  //  }
+  //}
+  text-align: center;
+  > * {
+    margin-top: 1rem;
+  }
+}
+.full-name-inputs,
+.validation-checkboxes {
+  display: flex;
+  margin: 0 -0.5rem;
+  background-color: nb-theme(background-basic-color-2);
+
+  > * {
+    margin: 0 0.5rem;
+  }
+}
+
+.checkbox-radio {
+  display: flex;
+}
+
+.demo-items {
+  flex: 1 0 33%;
+}
+
+.infinite-cards {
+  nb-card {
+    &.own-scroll {
+      height: 50vh;
+    }
+  }
+}
+
+nb-checkbox {
+  margin-bottom: 1rem;
+
+}
+nb-list {
+  background-color: nb-theme(background-basic-color-3);
+}
+.left-align {
+  text-align: left;
+}
+
+ .list-card {
+  background-color: nb-theme(background-basic-color-3);
+}
+ .informationBackgroud {
+   background-color: nb-theme(background-basic-color-3);
+ }
+ .remember {
+   align-items: end;
+ }
+::ng-deep nb-layout-column {
+  height: 80vw;
+}

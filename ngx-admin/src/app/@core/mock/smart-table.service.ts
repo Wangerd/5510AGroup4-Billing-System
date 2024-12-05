@@ -1,0 +1,223 @@
+import { Injectable } from '@angular/core';
+import { SmartTableData } from '../data/smart-table';
+
+@Injectable()
+export class SmartTableService extends SmartTableData {
+
+  data = [{
+    orderNumber: 1001,
+    productName: 'Elden Ring',
+    orderAmount: '120.00 USD',
+    settlementStatus: 'Pending payment',
+    paymentMethod: 'WeChat',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1002,
+    productName: 'Dark Souls Ⅲ',
+    orderAmount: '120.00 USD',
+    settlementStatus: 'Pending payment',
+    paymentMethod: 'MasterCard',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1003,
+    productName: 'SEKIRO: Shadows Die Twice',
+    orderAmount: '100.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'WeChat',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1004,
+    productName: 'Bloodborne',
+    orderAmount: '80.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'Visa',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1005,
+    productName: 'Elden Ring',
+    orderAmount: '100.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'Visa',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1006,
+    productName: 'Dark Souls Ⅲ',
+    orderAmount: '120.00 USD',
+    settlementStatus: 'Order Closure',
+    paymentMethod: 'Visa',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1007,
+    productName: 'Dark Souls Ⅲ',
+    orderAmount: '80.00 USD',
+    settlementStatus: 'Order Closure',
+    paymentMethod: 'MasterCard',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1008,
+    productName: 'Elden Ring',
+    orderAmount: '50.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'MasterCard',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1009,
+    productName: 'SEKIRO: Shadows Die Twice',
+    orderAmount: '50.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'MasterCard',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1010,
+    productName: 'Elden Ring',
+    orderAmount: '100.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'Visa',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1011,
+    productName: 'Dark Souls Ⅲ',
+    orderAmount: '100.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'MasterCard',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1012,
+    productName: 'SEKIRO: Shadows Die Twice',
+    orderAmount: '120.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'Visa',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1013,
+    productName: 'Elden Ring',
+    orderAmount: '50.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'MasterCard',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1014,
+    productName: 'Dark Souls Ⅲ',
+    orderAmount: '30.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'UnionPay',
+    settlementDate: '2024-11-25',
+  }, {
+    orderNumber: 1015,
+    productName: 'SEKIRO: Shadows Die Twice',
+    orderAmount: '1000.00 USD',
+    settlementStatus: 'Successful Payment',
+    paymentMethod: 'UnionPay',
+    settlementDate: '2024-11-25',
+  }, {
+    'orderNumber': 1016,
+    'productName': 'Elden Ring',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'Visa',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1017,
+    'productName': 'Dark Souls Ⅲ',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'AliPay',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1018,
+    'productName': 'Bloodborne',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'MaterCard',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1019,
+    'productName': 'SEKIRO: Shadows Die Twice',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'UnionPay',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1020,
+    'productName': 'SEKIRO: Shadows Die Twice',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'Visa',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1021,
+    'productName': 'Bloodborne',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Order Closure',
+    'paymentMethod': 'UnionPay',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1022,
+    'productName': 'Dark Souls Ⅲ',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Order Closure',
+    'paymentMethod': 'PayMe',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1023,
+    'productName': 'Bloodborne',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Order Closure',
+    'paymentMethod': 'UnionPay',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1024,
+    'productName': 'SEKIRO: Shadows Die Twice',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'MasterCard',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1025,
+    'productName': 'Dark Souls Ⅲ',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'PayMe',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1026,
+    'productName': 'Elden Ring',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'MasterCard',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1027,
+    'productName': 'Bloodborne',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'MasterCard',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1028,
+    'productName': 'SEKIRO: Shadows Die Twice',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'Visa',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1029,
+    'productName': 'Dark Souls Ⅲ',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'UnionPay',
+    'settlementDate': '2024-11-25',
+  }, {
+    'orderNumber': 1030,
+    'productName': 'Elden Ring',
+    'orderAmount': '1000.00 USD',
+    'settlementStatus': 'Successful Payment',
+    'paymentMethod': 'PayMe',
+    'settlementDate': '2024-11-25',
+
+  }];
+
+  getData() {
+    return this.data;
+  }
+}

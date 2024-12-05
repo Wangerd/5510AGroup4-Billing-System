@@ -1,0 +1,338 @@
+<nb-card class="col-md-12 col-lg-12 col-xxxl-12">
+  <nb-card-body>
+    <nb-stepper orientation="horizontal">
+      <nb-step [label]="labelOne">
+        <ng-template #labelOne>First step</ng-template>
+        <!--        <h3>Step content #1</h3>-->
+        <div class="row show-grid">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <p class="lorem">
+            <h3>Your current withdrawal amount is 1000 USD</h3>
+
+            <p class="lorem">
+              Please enter a number less than (or equal to) the withdrawable amount
+            </p>
+            <p class="lorem">
+              If you want to change the withdrawal currency, please select it from the drop-down box
+            </p>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="row show-grid">
+          <div class="col-md-3"></div>
+          <div class="col-md-12 col-lg-5 col-xxxl-5">
+            <input [ngClass]="{'form-control-danger': firstForm.invalid && (firstForm.dirty || firstForm.touched)}"
+                   class="form-control" formControlName="firstCtrl"
+                   placeholder="Please enter the withdrawal amount"
+                   type="text">
+          </div>
+          <nb-select selected="1">
+            <nb-option value="1">USD(=1)</nb-option>
+            <nb-option value="2">HKD(≈7.78)</nb-option>
+            <nb-option value="3">JPY(≈154.07)</nb-option>
+            <nb-option value="4">EUR(≈0.94)</nb-option>
+            <nb-option value="5">RMB(≈7.23)</nb-option>
+          </nb-select>
+        </div>
+        <button nbButton disabled nbStepperNext>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+
+      <nb-step [label]="labelTwo">
+        <ng-template #labelTwo>Second step</ng-template>
+        <!--        <h3>Step content #2</h3>-->
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <nb-card class="informationBackgroud">
+              <nb-card-header><h3>Confirm Your Personal and Account Information</h3></nb-card-header>
+              <nb-card-body>
+                <div class="remember row show-grid">
+                  <div class="col-lg-8">
+                    <input fullWidth nbInput placeholder="Bank Account" type="text" value="123456 123456 123456">
+                  </div>
+                  <div>
+                    <nb-select selected="1">
+                      <nb-option value="1">UnionPay</nb-option>
+                      <nb-option value="2">Visa</nb-option>
+                      <nb-option value="3">MasterCard</nb-option>
+                      <nb-option value="4">PayMe</nb-option>
+                      <nb-option value="5">WeChat</nb-option>
+                      <nb-option value="6">AliPay</nb-option>
+                    </nb-select>
+                  </div>
+                  <div class="col-lg-2">
+                    <nb-checkbox>remember</nb-checkbox>
+                  </div>
+                </div>
+                <div class="full-name-inputs">
+                  <input fullWidth nbInput placeholder="First Name" type="text" value="Hidetaka">
+                  <input fullWidth nbInput placeholder="Last Name" type="text" value="Miyazaki">
+                </div>
+                <input fullWidth nbInput placeholder="Address1" shape="semi-round" type="text"
+                       value="Shibuya ku, Tokyo">
+                <input fullWidth nbInput placeholder="Address2" shape="semi-round" type="text"
+                       value="2-26-2 Sasazuka Kita Odakyu Building">
+                <input fullWidth nbInput placeholder="Address3" shape="semi-round" type="text">
+                <!--              <input type="text" nbInput fullWidth shape="rectangle" placeholder="Rectangle border">-->
+                <!--              <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi-round border">-->
+                <!--              <input type="text" nbInput fullWidth shape="round" placeholder="Rounded border">-->
+                <!--              <input type="text" nbInput fullWidth placeholder="Disabled input" disabled/>-->
+                <textarea fullWidth nbInput placeholder="Remarks Area" rows="5" shape="round"></textarea>
+                <!--              <input type="text" nbInput fullWidth fieldSize="small"  placeholder="Small Input">-->
+                <!--              <input type="text" nbInput fullWidth fieldSize="medium"  placeholder="Medium Input">-->
+                <!--              <input type="text" nbInput fullWidth fieldSize="large"  placeholder="Large Input">-->
+              </nb-card-body>
+            </nb-card>
+          </div>
+        </div>
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+
+      <nb-step label="Third step">
+        <!--        <h3>Step content #3</h3>-->
+        <div class="infinite-cards row">
+          <div class="col-lg-1 col-xxxl-1"></div>
+          <div class="col-md-12 col-lg-10 col-xxxl-10">
+            <nb-card class="own-scroll">
+              <nb-card-header>*Please read all agreements and confirm</nb-card-header>
+              <nb-list
+                (bottomThreshold)="loadNext(firstCard)"
+                [threshold]="500"
+                nbInfiniteList>
+                <nb-list-item *ngFor="let newsPost of firstCard.news">
+                  <ngx-news-post [post]="newsPost"></ngx-news-post>
+                </nb-list-item>
+                <nb-list-item *ngFor="let _ of firstCard.placeholders">
+                  <ngx-news-post-placeholder></ngx-news-post-placeholder>
+                </nb-list-item>
+              </nb-list>
+            </nb-card>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-1 col-xxxl-1"></div>
+          <div class="left-align">
+            <div>
+              <nb-checkbox (checkedChange)="toggle1($event)">I have read and agreed to all the terms</nb-checkbox>
+            </div>
+            <div>
+              <nb-checkbox (checkedChange)="toggle2($event)">I am aware that when the advance payment amount does not
+                match the actual amount, the difference will be made up or deducted next month
+              </nb-checkbox>
+            </div>
+            <div>
+              <nb-checkbox (checkedChange)="toggle3($event)">I allow the platform to collect data (sales, revenue, etc.)
+                and use it for future optimization
+              </nb-checkbox>
+            </div>
+            <div>
+              <nb-checkbox (checkedChange)="toggle4($event)">I am aware that the platform has the right to review
+                transaction compliance. If fraudulent behavior occurs, the platform has the right<br> to delayor cancel
+                the prepayment service
+              </nb-checkbox>
+            </div>
+          </div>
+        </div>
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext [disabled]="checked1||checked2||checked3||checked4">next</button>
+
+      </nb-step>
+      <nb-step [label]="labelFour">
+        <ng-template #labelFour>Fourth step</ng-template>
+        <!--        <h3>Step content #4</h3>-->
+        <div class="lists row">
+          <div class="col-lg-2 col-xxxl-2"></div>
+          <div class="col-md-12 col-lg-8 col-xxxl-8">
+            <nb-card class="list-card">
+              <nb-card-header>Account Withdrawal</nb-card-header>
+              <nb-card-body>
+                <div class="row show-grid">
+                  <div class="col-md-1"></div>
+                  <h4 class="grid-h">Withdrawable amount: </h4>
+                  <div class="col-md-4">
+                    <div><h4>900.00 USD</h4></div>
+                  </div>
+                </div>
+                <div class="row show-grid">
+                  <div class="col-md-1"></div>
+                  <div class="grid-h">Exchange Method:</div>
+                  <div class="col-md-7">
+                    <div>Real Time exchange rate on trading days</div>
+                  </div>
+                </div>
+                <div class="row show-grid">
+                  <div class="col-md-1"></div>
+                  <div class="grid-h">Current Reference Exchange Rate:</div>
+                  <div class="col-md-5">
+                    <div>1.00</div>
+                  </div>
+                </div>
+                <div class="row show-grid">
+                  <div class="col-md-1"></div>
+                  <div class="grid-h">Application Amount:</div>
+                  <div class="col-md-7">
+                    <div>900</div>
+                  </div>
+                </div>
+              </nb-card-body>
+            </nb-card>
+          </div>
+          <div class="col-lg-2 col-xxxl-2"></div>
+
+          <div class="col-lg-2 col-xxxl-2"></div>
+          <div class="col-md-12 col-lg-8 col-xxxl-8">
+            <nb-card class="list-card">
+              <nb-card-header>Receiving Account</nb-card-header>
+              <nb-card-body>
+                <div class="row show-grid">
+                  <div class="col-md-1"></div>
+                  <div class="grid-h">Title Of Account:</div>
+                  <div class="col-md-8">
+                    <div>Hidetaka Miyazaki</div>
+                  </div>
+                </div>
+                <div class="row show-grid">
+                  <div class="col-md-1"></div>
+                  <div class="grid-h">Bank Account:</div>
+                  <div class="col-md-8">
+                    <div>123456 ****** 654321</div>
+                  </div>
+                </div>
+                <div class="row show-grid">
+                  <div class="col-md-1"></div>
+                  <div class="grid-h">Currency Typies:</div>
+                  <div class="col-md-8">
+                    <div>USD</div>
+                  </div>
+                </div>
+              </nb-card-body>
+            </nb-card>
+          </div>
+          <div class="col-lg-2 col-xxxl-2"></div>
+        </div>
+
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton (click)="showToast(positions.TOP_RIGHT, 'success')">submit</button>
+<!--        <button nbButton (click)="showToast(positions.TOP_RIGHT, 'success')" >submit</button>-->
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>
+
+<!--<div class="steppers-container row">-->
+<!--  <div class="col-md-12 col-lg-6 col-xxxl-6">-->
+<!--    <nb-card>-->
+<!--      <nb-card-body>-->
+<!--        <nb-stepper #stepper>-->
+<!--          <nb-step [stepControl]="firstForm" label="First step">-->
+<!--            <form [formGroup]="firstForm" (ngSubmit)="onFirstSubmit()" class="step-container">-->
+<!--              <p class="lorem">-->
+<!--                Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down. Nullizzle sapien velizzle,-->
+<!--                my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up, gravida vizzle, dang.-->
+<!--              </p>-->
+<!--              <div class="input-group">-->
+<!--                <input type="text" placeholder="Enter your name" class="form-control" formControlName="firstCtrl"-->
+<!--                       [ngClass]="{'form-control-danger': firstForm.invalid && (firstForm.dirty || firstForm.touched)}">-->
+<!--              </div>-->
+<!--              <button nbButton nbStepperNext>next</button>-->
+<!--            </form>-->
+<!--          </nb-step>-->
+<!--          <nb-step [stepControl]="secondForm" label="Second step">-->
+<!--            <form [formGroup]="secondForm" (ngSubmit)="onSecondSubmit()" class="step-container">-->
+<!--              <p class="lorem">-->
+<!--                Pellentesque we gonna chung tortor.-->
+<!--                Sizzle pizzle. Fizzle izzle dolor dapibus fo shizzle mah nizzle fo rizzle, mah home g-dizzle tempus tempor.-->
+<!--                Maurizzle cool nibh owned turpizzle. My shizz fo shizzle tortor.-->
+<!--              </p>-->
+<!--              <div class="input-group">-->
+<!--                <input type="text" placeholder="Enter favorite movie" class="form-control" formControlName="secondCtrl"-->
+<!--                       [ngClass]="{'form-control-danger': secondForm.invalid && (secondForm.dirty || secondForm.touched)}">-->
+<!--              </div>-->
+<!--              <button nbButton nbStepperPrevious>prev</button>-->
+<!--              <button nbButton nbStepperNext>next</button>-->
+<!--            </form>-->
+<!--          </nb-step>-->
+<!--          <nb-step [stepControl]="thirdForm" label="Third step">-->
+<!--            <form [formGroup]="thirdForm" (ngSubmit)="onThirdSubmit()" class="step-container">-->
+<!--              <p class="lorem">-->
+<!--                Things boom shackalack rhoncus yo. In fo shizzle my nizzle gangsta platea dictumst. Check it out pot.-->
+<!--              </p>-->
+<!--              <div class="input-group">-->
+<!--                <input type="text" placeholder="Enter something" class="form-control" formControlName="thirdCtrl"-->
+<!--                       [ngClass]="{'form-control-danger': thirdForm.invalid && (thirdForm.dirty || thirdForm.touched)}">-->
+<!--              </div>-->
+<!--              <button nbButton nbStepperPrevious>prev</button>-->
+<!--              <button nbButton nbStepperNext>Confirm</button>-->
+<!--            </form>-->
+<!--          </nb-step>-->
+<!--          <nb-step [stepControl]="thirdForm" [hidden]="true" label="Third step">-->
+<!--            <div class="step-container">-->
+<!--              <h3>Wizard completed!</h3>-->
+<!--              <button nbButton (click)="stepper.reset()">Try again</button>-->
+<!--            </div>-->
+<!--          </nb-step>-->
+<!--        </nb-stepper>-->
+<!--      </nb-card-body>-->
+<!--    </nb-card>-->
+<!--  </div>-->
+
+
+<!--  <div class="col-md-12 col-lg-6 col-xxxl-6">-->
+<!--    <nb-card size="medium">-->
+<!--      <nb-card-body>-->
+<!--        <nb-stepper orientation="vertical">-->
+<!--          <nb-step label="First step">-->
+<!--            <h3>Step content #1</h3>-->
+<!--            <p class="lorem">-->
+<!--              Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum,-->
+<!--              sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis-->
+<!--              viverra ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus turpis, commodo vel-->
+<!--              placerat quis, lobortis in ligula.-->
+<!--            </p>-->
+<!--            <button nbButton disabled nbStepperNext>prev</button>-->
+<!--            <button nbButton nbStepperNext>next</button>-->
+<!--          </nb-step>-->
+<!--          <nb-step label="Second step">-->
+<!--            <h3>Step content #2</h3>-->
+<!--            <p class="lorem">-->
+<!--              Curabitur luctus mattis risus nec condimentum. Donec at dui turpis. Sed vehicula fringilla rutrum. Nullam-->
+<!--              sed ornare magna. Mauris vitae laoreet diam. Mauris fermentum ligula at lacinia semper. Nulla placerat dui-->
+<!--              eu sapien pellentesque, eu placerat leo luctus. Cras pharetra blandit fermentum.-->
+<!--            </p>-->
+<!--            <button nbButton nbStepperPrevious>prev</button>-->
+<!--            <button nbButton nbStepperNext>next</button>-->
+<!--          </nb-step>-->
+<!--          <nb-step label="Third step">-->
+<!--            <h3>Step content #3</h3>-->
+<!--            <p class="lorem">-->
+<!--              Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum,-->
+<!--              sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis-->
+<!--              viverra ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus turpis, commodo vel-->
+<!--              placerat quis, lobortis in ligula.-->
+<!--            </p>-->
+<!--            <p class="lorem">-->
+<!--              Curabitur luctus mattis risus nec condimentum. Donec at dui turpis. Sed vehicula fringilla rutrum. Nullam-->
+<!--              sed ornare magna. Mauris vitae laoreet diam. Mauris fermentum ligula at lacinia semper. Nulla placerat dui-->
+<!--              eu sapien pellentesque, eu placerat leo luctus. Cras pharetra blandit fermentum.-->
+<!--            </p>-->
+<!--            <button nbButton nbStepperPrevious>prev</button>-->
+<!--            <button nbButton nbStepperNext>next</button>-->
+<!--          </nb-step>-->
+<!--          <nb-step label="Fourth step">-->
+<!--            <h3>Step content #4</h3>-->
+<!--            <p class="lorem">-->
+<!--              Proin varius accumsan semper. Praesent consequat tincidunt sagittis. Curabitur egestas sem a ipsum bibendum,-->
+<!--              sit amet fringilla orci efficitur. Nam bibendum lectus ut viverra tristique. Fusce eu pulvinar magna, quis-->
+<!--              viverra ex.-->
+<!--            </p>-->
+<!--            <button nbButton nbStepperPrevious>prev</button>-->
+<!--            <button nbButton disabled nbStepperNext>next</button>-->
+<!--          </nb-step>-->
+<!--        </nb-stepper>-->
+<!--      </nb-card-body>-->
+<!--    </nb-card>-->
+<!--  </div>-->
+<!--</div>-->

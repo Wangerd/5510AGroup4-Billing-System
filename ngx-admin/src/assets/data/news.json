@@ -1,0 +1,35 @@
+[
+  {
+    "title":"Special Reminder",
+    "link": "https://blog.angularindepth.com/fan-of-angular-in-depth-and-my-writings-support-us-on-twitter-e3bfcbabb4b1",
+    "text": "This agreement is jointly signed by Tenpay Payment Technology Co., Ltd. (hereinafter referred to as \"Tenpay\" or \"the Company\") and you, and has legal effect as a contract. Before using WeChat Pay services (hereinafter referred to as \"this service\"), you should carefully read and comply with this agreement, the \"Tenpay Service Agreement\" and the \"WeChat Pay User Service Agreement\". Both parties confirm that the \"Tenpay Service Agreement\" and the \"WeChat Pay User Service Agreement\" are an integral part of this agreement and have equal legal effect. In case of any conflict with this agreement, this agreement shall prevail.Please carefully read and fully understand the contents of each clause, especially the clauses on exemption or limitation of liability, dispute resolution, and legal application. service, you are deemed to have read and agreed to be bound by this agreement. If you have any questions about this agreement, you should consult customer service. You have read and accepted the \"Tenpay Service Agreement\". Both parties confirm that the \"Tenpay Service Agreement\" is an integral part of this agreement and has equal legal effect. "
+  },
+  {
+    "title": "Payment Agreement",
+    "link": "https://blog.angularindepth.com/boosting-performance-of-angular-applications-with-manual-change-detection-42cb396110fb",
+    "text": "Tenpay provides you with currency fund transfer services. When users purchase your goods or services, they can complete the transaction through this service. The specific application of this service includes but is not limited to the following scenarios. You can apply to open one or more of the following payment scenarios on your own, and the final decision on which payment scenario to open will be made by Tenpay after review.Personal business payment barcode: \"It is a mode in which users use WeChat to \"scan\" the personal business payment barcode to complete payment."
+  },
+  {
+    "title": "User Privacy Protection Agreement",
+    "link": "https://blog.angularindepth.com/how-angular-elements-uses-custom-events-mechanism-to-transmit-components-outputs-outside-angular-7b469386f6e2",
+    "text": "When Tenpay discovers that you may have engaged in money laundering, terrorist financing, fraudulent transactions, credit card cashing out, malicious bankruptcy, or other illegal and irregular activities, or when Tenpay discovers suspicious transaction characteristics such as centralized transfer and decentralized transfer, or disputed transactions, Tenpay can delay the settlement of the corresponding funds in your WeChat Pay merchant account. If the settlement has already been completed, Tenpay can delay the transfer to your designated bank account and payment account. For funds that have been delayed in settlement or transfer, Tenpay will only resume settlement and transfer of that portion of the funds when the suspicion of illegal or irregular activities is eliminated. If your behavior causes losses to Tenpay, you should also bear the liability for compensation."
+  },
+  {
+    "title": "Platform operation standards",
+    "link": "https://blog.angularindepth.com/angular-cdk-tables-1537774d7c99",
+    "text": "In order to ensure transaction security, prevent transaction risks, maintain a good trading ecosystem, and safeguard the legitimate rights and interests of users, Tencent will manage the delivery progress and status of your orders in specific scenarios in accordance with management requirements such as the \"WeChat Mini Program Platform Operation Standards\"; If your merchant account is associated with a specific category of mini programs or other specific scenarios, you agree that Tenpay has the right to take management measures on the transaction funds of your corresponding orders based on the transaction status information provided by Tencent to Tenpay and in accordance with the relevant provisions of this agreement. The specific measures shall be subject to the service notification information sent to you by Tenpay"
+  },
+  {
+    "title": "Anti fraud and money laundering",
+    "link": "https://blog.angularindepth.com/becoming-an-angular-environmentalist-45a48f7c20d8",
+    "text": "According to the \"Operation Specification for Transaction Mini Programs\", you confirm that you have agreed to Tencent's intervention and handling of transaction disputes between you and users, and confirm that Tencent has the right to instruct Tenpay Tong to deduct corresponding amounts from the remaining funds of your merchant account to users, in order to maintain the normal transaction order of the mini program and protect the rights and interests of platform users. You confirm that you have no objection to Tenpay Tong's execution of Tencent's aforementioned instructions. If any disputes arise as a result, you shall resolve them with Tencent"
+  },
+  {
+    "title": "Platform Disclaimer",
+    "link": "https://blog.angularindepth.com/how-to-unit-test-angular-components-with-fake-ngrx-teststore-f0500cc5fc26",
+    "text": "You are responsible for building your own hardware platform and bearing the related equipment and communication costs. You should strictly follow the access technology specifications of this service and merchant platform to build and operate your own computer system, and ensure the stability, security, and business continuity of your system. You should verify the authenticity of the signatures in the WeChat Pay request and response data packets during the transaction process, and ensure the security and confidentiality of the payment information data transmission process. You should clarify the specific requirements of various technical details such as data transmission protocols, security mechanisms, hardware requirements, and physical connections with Tenpay, and properly handle various transaction anomalies reported by Tenpay."
+  }
+
+
+
+]
